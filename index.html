@@ -87,10 +87,10 @@ header.hide{transform:translateY(-100%)}
 @keyframes up{to{transform:none}}
 @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 .introbt{position:absolute;z-index:3;right:max(20px,calc((100% - 1240px)/2));bottom:44px;width:120px;height:120px;display:grid;place-items:center;opacity:0;animation:fade 1s 1.4s forwards}
-.introbt svg.ring{position:absolute;inset:0;animation:spin 14s linear infinite;will-change:transform;backface-visibility:hidden}
-.introbt .arrow{will-change:transform;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite}
+.introbt svg.ring{position:absolute;inset:0;}
+.introbt .arrow{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
 @keyframes spin{from{transform:rotate(0deg) translateZ(0)}to{transform:rotate(360deg) translateZ(0)}}
-@keyframes bob{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,6px,0)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
 /* ===== main visual ===== */
 #mainvisual{padding:0;height:100svh;min-height:680px;max-height:1000px;background:var(--deep);color:#fff;overflow:hidden}
@@ -278,10 +278,10 @@ header.hide{transform:translateY(-100%)}
 .sys-tabs button span{font-family:var(--en);margin-right:8px;font-weight:400;opacity:.7}
 .sys-tabs button.act{background:#fff;color:var(--navy)}
 .stamp{position:absolute;z-index:4;left:max(20px,calc((100% - 1240px)/2));top:90px;width:140px;height:140px;color:#fff;display:grid;place-items:center}
-.stamp svg:first-child{position:absolute;inset:0;animation:spin 20s linear infinite;will-change:transform;backface-visibility:hidden}
+.stamp svg:first-child{position:absolute;inset:0;}
 .stamp .m{width:56px;height:56px}
 .roundbt{position:absolute;z-index:6;right:max(20px,calc((100% - 1240px)/2));top:50%;transform:translateY(-50%);width:150px;height:150px;display:grid;place-items:center}
-.roundbt svg{position:absolute;inset:0;animation:spin 16s linear infinite;will-change:transform;backface-visibility:hidden}
+.roundbt svg{position:absolute;inset:0;}
 .roundbt b{width:84px;height:84px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:14px;transition:transform .3s}
 .roundbt:hover b{transform:scale(1.1)}
 
