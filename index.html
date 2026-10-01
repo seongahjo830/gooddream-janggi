@@ -45,13 +45,12 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
 .clip > img{clip-path:inset(0 0 100% 0);transform:scale(1.25);transition:clip-path 1.4s cubic-bezier(.77,0,.18,1),transform 2s cubic-bezier(.2,.7,.2,1)}
 .clip.on > img{clip-path:inset(0 0 0 0);transform:scale(1)}
 .sig article:hover .ph.on > img{transform:scale(1.08)}
-#intro .bg img,.mv .photo img,.sys .swiper-slide > img{will-change:transform,opacity;backface-visibility:hidden}
 .rv.l{transform:translateX(-50px)}.rv.r{transform:translateX(50px)}.rv.l.on,.rv.r.on{transform:none}
 .d1{transition-delay:.12s!important}.d2{transition-delay:.24s!important}.d3{transition-delay:.36s!important}.d4{transition-delay:.48s!important}
 
 /* ===== header ===== */
 header{position:fixed;inset:0 0 auto;z-index:80;color:#fff;transition:background .4s,box-shadow .4s,color .4s,transform .4s}
-header.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
+header.solid{background:#fff;box-shadow:0 1px 0 var(--line);color:var(--ink)}
 header.hide{transform:translateY(-100%)}
 .hd{display:flex;align-items:center;justify-content:space-between;height:84px}
 .logo{display:flex;align-items:center;gap:10px}
@@ -72,8 +71,8 @@ header.hide{transform:translateY(-100%)}
 
 /* ===== intro ===== */
 #intro{height:100svh;min-height:640px;max-height:1100px;padding:0;overflow:hidden;color:#fff;background:#0d1628}
-#intro .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.15);transition:opacity 2s ease,transform 9s linear}
-#intro .bg img.act{opacity:1;transform:scale(1)}
+#intro .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+#intro .bg img.act{opacity:1}
 #intro .vod{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity 1.2s}
 #intro .vod.ready{opacity:1}
 #intro::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(13,22,40,.92) 0%,rgba(13,22,40,.45) 45%,rgba(13,22,40,.15) 100%)}
@@ -98,12 +97,12 @@ header.hide{transform:translateY(-100%)}
 .mv,.mv .swiper-wrapper,.mv .swiper-slide{height:100%}
 .mv .swiper-slide{position:relative;overflow:hidden}
 .mv .photo{position:absolute;inset:0}
-.mv .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 7s ease-out}
-.mv .swiper-slide-active .photo img{transform:scale(1)}
+.mv .photo img{width:100%;height:100%;object-fit:cover}
 .mv .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,22,40,.88) 0%,rgba(13,22,40,.55) 50%,rgba(13,22,40,.1) 100%)}
 .mv .txt{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center}
 .mv .txt > *{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}
 .mv .swiper-slide-active .txt > *{opacity:1;transform:none}
+#mainvisual .introbt{opacity:1;animation:none}
 .mv .swiper-slide-active .txt > :nth-child(2){transition-delay:.15s}
 .mv .swiper-slide-active .txt > :nth-child(3){transition-delay:.3s}
 .mv .swiper-slide-active .txt > :nth-child(4){transition-delay:.45s}
@@ -111,7 +110,7 @@ header.hide{transform:translateY(-100%)}
 .mv h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,64px);line-height:1.3;letter-spacing:-.03em;margin:18px 0 22px}
 .mv p{font-size:clamp(15px,1.5vw,18px);opacity:.82;max-width:560px}
 .mv .hashes{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
-.mv .hashes span{font-size:14px;padding:7px 15px;border-radius:99px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px)}
+.mv .hashes span{font-size:14px;padding:7px 15px;border-radius:99px;background:rgba(255,255,255,.12);}
 .mv-nav{position:absolute;z-index:5;left:0;right:0;bottom:56px}
 .mv-nav .wrap{display:flex;gap:28px}
 .mv-nav button{font-family:var(--en);font-size:17px;color:rgba(255,255,255,.45);display:flex;flex-direction:column;gap:12px;width:120px;text-align:left;transition:color .3s}
@@ -126,7 +125,7 @@ header.hide{transform:translateY(-100%)}
 #main01 .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center}
 #main01 .pic{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
 #main01 .pic img{width:100%;height:100%;object-fit:cover}
-#main01 .pic .badge{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--sub)}
+#main01 .pic .badge{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.92);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--sub)}
 #main01 .pic .badge b{display:block;font-size:18px;color:var(--navy)}
 #main01 .letter p{color:var(--sub);font-size:16.5px;line-height:1.95;margin-bottom:18px}
 #main01 .sign{margin-top:36px;display:flex;align-items:baseline;gap:14px}
@@ -138,7 +137,7 @@ header.hide{transform:translateY(-100%)}
 #awards{overflow:hidden;min-height:900px;display:flex;align-items:center}
 #awards .center{position:relative;z-index:2;max-width:640px;margin:0 auto}
 .circles{position:absolute;inset:0;pointer-events:none}
-.cb{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;padding:18px;box-shadow:0 20px 50px -20px rgba(29,52,97,.35);pointer-events:auto;will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0)}
+.cb{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;padding:18px;box-shadow:0 14px 30px -18px rgba(29,52,97,.35)}
 .cb span{font-size:14px;font-weight:600;line-height:1.4}
 .cb small{display:block;font-family:var(--en);font-size:11px;letter-spacing:.14em;opacity:.7;margin-bottom:4px}
 .cb.n{background:var(--navy);color:#fff}
@@ -265,8 +264,7 @@ header.hide{transform:translateY(-100%)}
 #main07{padding:0;color:#fff;background:var(--deep);overflow:hidden}
 .sys,.sys .swiper-slide{height:min(100svh,860px);min-height:640px}
 .sys .swiper-slide{position:relative}
-.sys .swiper-slide > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 6s}
-.sys .swiper-slide-active > img{transform:scale(1)}
+.sys .swiper-slide > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .sys .swiper-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,22,40,.9),rgba(13,22,40,.35))}
 .sys .txt{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:640px}
 .sys .eyebrow{color:var(--gold-l)}
@@ -311,20 +309,6 @@ header.hide{transform:translateY(-100%)}
 .biz-law{margin-top:16px;font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.7}
 
 
-.cases{margin-top:50px;padding:44px;border-radius:24px;background:var(--cream)}
-.cases-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-.cases-head h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.6vw,32px);margin-top:6px}
-.case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:18px}
-.case{display:block;background:#fff;border-radius:16px;overflow:hidden;transition:transform .4s,box-shadow .4s}
-.case:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(29,52,97,.4)}
-.case .ba{position:relative;display:grid;grid-template-columns:1fr 1fr;aspect-ratio:16/10;overflow:hidden}
-.case .ba div{position:relative;overflow:hidden}
-.case .ba img{width:100%;height:100%;object-fit:cover;filter:blur(14px) grayscale(.4);transform:scale(1.3)}
-.case .ba span{position:absolute;left:10px;top:10px;font-family:var(--en);font-size:11px;letter-spacing:.12em;background:rgba(255,255,255,.9);color:var(--navy);padding:3px 9px;border-radius:99px}
-.case .ba div:last-child span{background:var(--navy);color:#fff}
-.case .lock{position:absolute;inset:auto 0 0;padding:10px;text-align:center;font-size:13px;font-weight:700;color:#fff;background:rgba(13,22,40,.6)}
-.case b{display:block;padding:16px 18px 2px;font-size:16px}
-.case small{display:block;padding:0 18px 18px;color:var(--sub);font-size:13px}
 .ft-way{margin-top:70px}
 .ft-way h3{color:#fff;font-size:20px;margin-bottom:18px}
 .way-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
@@ -337,8 +321,7 @@ header.hide{transform:translateY(-100%)}
 .root_daum_roughmap{width:100%!important;border-radius:var(--radius);overflow:hidden}
 .root_daum_roughmap .wrap_map{height:360px!important}
 .root_daum_roughmap .cont,.root_daum_roughmap .wrap_btn_zoom{display:none!important}
-@media (max-width:1100px){.case-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:760px){.cases{padding:26px 18px}.case-grid{grid-template-columns:1fr}.root_daum_roughmap .wrap_map{height:260px!important}}
+@media (max-width:760px){.root_daum_roughmap .wrap_map{height:260px!important}}
 
 /* ===== quick menu ===== */
 .quick-menu{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;background:#fff;border-radius:999px;padding:8px;box-shadow:0 14px 40px rgba(20,35,70,.16)}
@@ -465,14 +448,14 @@ header.hide{transform:translateY(-100%)}
 
 <header id="hd">
   <div class="wrap hd">
-    <a href="#intro" class="logo"><svg class="mark"><use href="#mark"/></svg><span class="txt"><b>굿드림치과</b><small>GIMPO JANGGI</small></span></a>
+    <a href="#mainvisual" class="logo"><svg class="mark"><use href="#mark"/></svg><span class="txt"><b>굿드림치과</b><small>GIMPO JANGGI</small></span></a>
     <nav id="gnb">
       <ul>
         <li><a href="#main01">진료철학</a></li>
         <li><a href="#maindr">의료진소개</a></li>
         <li><a href="#main02">특화진료</a></li>
         <li><a href="#main03">진료과목</a></li>
-        <li><a href="#main05">임상사례</a></li>
+        <li><a href="#main05">건강정보</a></li>
         <li><a href="#main10">장비소개</a></li>
         <li><a href="#main06">둘러보기</a></li>
         <li><a href="#footer">진료안내</a></li>
@@ -486,32 +469,19 @@ header.hide{transform:translateY(-100%)}
   </div>
 </header>
 
-<!-- 01 INTRO -->
-<section id="intro">
-  <div class="bg">
-    <video class="vod" autoplay muted loop playsinline poster="img/poster.jpg"><source src="https://speed.ist-design.co.kr/video/gooddream/jangi.mp4" type="video/mp4"></video>
-    <img src="img/janggi_8.jpg" alt="" class="act">
-    <img src="img/janggi_4.jpg" alt="">
-    <img src="img/janggi_11.jpg" alt="">
-  </div>
-  <div class="in wrap">
-    <svg class="mark"><use href="#mark"/></svg>
-    <h1>
-      <span class="ln"><span>오늘, 지금, 당장</span></span>
-      <span class="ln"><span>내 치아를 지키는 치과</span></span>
-      <span class="ln"><span>장기역 가까운 굿드림치과 김포장기점입니다</span></span>
-    </h1>
-  </div>
-  <a href="#mainvisual" class="introbt" aria-label="아래로 스크롤">
-    <svg class="ring" viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text font-family="Marcellus" font-size="11" letter-spacing="3.2" fill="#fff"><textPath href="#circ">SCROLL DOWN · GOOD DREAM DENTAL · </textPath></text></svg>
-    <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
-  </a>
-</section>
-
 <!-- 02 MAIN VISUAL -->
 <section id="mainvisual">
   <div class="swiper mv">
     <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="photo"><img src="img/janggi_8.jpg" alt="굿드림치과 김포장기점 진료실"></div>
+        <div class="wrap txt">
+          <span class="eyebrow">Good Dream Dental · Gimpo Janggi</span>
+          <h2>오늘, 지금, 당장<br>내 치아를 지키는 치과</h2>
+          <p>장기역 가까운 굿드림치과 김포장기점입니다. 치료보다 예방을, 발치보다 자연치아 보존을 먼저 생각합니다.</p>
+          <div class="hashes"><span>#장기역 580m</span><span>#화요일 21시 야간진료</span><span>#토요일 진료</span></div>
+        </div>
+      </div>
       <div class="swiper-slide">
         <div class="photo"><img src="img/janggi_4.jpg" alt="미세현미경 진료"></div>
         <div class="wrap txt">
@@ -550,7 +520,11 @@ header.hide{transform:translateY(-100%)}
       </div>
     </div>
   </div>
-  <div class="mv-nav"><div class="wrap" id="mvNav"><button class="act"><span>01</span><i></i></button><button><span>02</span><i></i></button><button><span>03</span><i></i></button><button><span>04</span><i></i></button></div></div>
+  <div class="mv-nav"><div class="wrap" id="mvNav"><button class="act"><span>01</span><i></i></button><button><span>02</span><i></i></button><button><span>03</span><i></i></button><button><span>04</span><i></i></button><button><span>05</span><i></i></button></div></div>
+  <a href="#main01" class="introbt" aria-label="아래로 스크롤">
+    <svg class="ring" viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text font-family="Marcellus" font-size="11" letter-spacing="3.2" fill="#fff"><textPath href="#circ">SCROLL DOWN · GOOD DREAM DENTAL · </textPath></text></svg>
+    <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+  </a>
 </section>
 
 <!-- 03 PHILOSOPHY -->
@@ -712,16 +686,6 @@ header.hide{transform:translateY(-100%)}
       </div>
       <a class="btn btn-line rv d2" style="color:var(--navy)" href="https://blog.naver.com/gooddreamden" target="_blank" rel="noopener">건강정보 전체보기 +</a>
     </div>
-    <div class="cases rv">
-      <div class="cases-head"><div><span class="eyebrow">Before &amp; After</span><h3>굿드림치과 임상사례</h3></div><a class="btn btn-navy" href="http://gooddream.co.kr/case" target="_blank" rel="noopener">임상사례 전체보기 +</a></div>
-      <div class="case-grid">
-        <a class="case" href="http://gooddream.co.kr/case" target="_blank" rel="noopener"><div class="ba"><div><img src="img/janggi_9.jpg" alt=""><span>BEFORE</span></div><div><img src="img/janggi_9.jpg" alt=""><span>AFTER</span></div><p class="lock">🔒 로그인 후 확인 가능합니다</p></div><b>교정 케이스</b><small>치아교정 · 교정과 전문의 진료</small></a>
-        <a class="case" href="http://gooddream.co.kr/case" target="_blank" rel="noopener"><div class="ba"><div><img src="img/janggi_5.jpg" alt=""><span>BEFORE</span></div><div><img src="img/janggi_5.jpg" alt=""><span>AFTER</span></div><p class="lock">🔒 로그인 후 확인 가능합니다</p></div><b>임플란트 케이스</b><small>CT 진단 · 골이식 · 전악수복</small></a>
-        <a class="case" href="http://gooddream.co.kr/case" target="_blank" rel="noopener"><div class="ba"><div><img src="img/janggi_4.jpg" alt=""><span>BEFORE</span></div><div><img src="img/janggi_4.jpg" alt=""><span>AFTER</span></div><p class="lock">🔒 로그인 후 확인 가능합니다</p></div><b>자연치아 살리기 케이스</b><small>미세현미경 · 재신경치료</small></a>
-        <a class="case" href="http://gooddream.co.kr/case" target="_blank" rel="noopener"><div class="ba"><div><img src="img/janggi_3.jpg" alt=""><span>BEFORE</span></div><div><img src="img/janggi_3.jpg" alt=""><span>AFTER</span></div><p class="lock">🔒 로그인 후 확인 가능합니다</p></div><b>보철 케이스</b><small>디지털 보철 · 브릿지</small></a>
-      </div>
-      <p class="law">전후사진은 의료법에 따라 회원 로그인 후 확인하실 수 있으며, 실제 내원 환자분의 동의를 받아 게시됩니다. 치료 결과는 개인에 따라 다를 수 있습니다.</p>
-    </div>
     <div class="tabs rv" id="tabs">
       <button class="act" data-c="전체">전체</button>
       <button data-c="치아살리기">치아살리기</button>
@@ -839,7 +803,6 @@ header.hide{transform:translateY(-100%)}
           <dd class="sns">
             <a href="https://blog.naver.com/gooddreamden" target="_blank" rel="noopener" style="background:var(--naver);color:#fff">N 블로그</a>
             <a href="https://pf.kakao.com/_byxibT" target="_blank" rel="noopener" style="background:var(--kakao);color:#3c1e1e">카카오톡</a>
-            <a href="https://www.youtube.com/results?search_query=%EA%B5%BF%EB%93%9C%EB%A6%BC%EC%B9%98%EA%B3%BC" target="_blank" rel="noopener" style="background:#ff0033;color:#fff">▶ 유튜브</a>
           </dd>
         </dl>
       </div>
@@ -854,7 +817,7 @@ header.hide{transform:translateY(-100%)}
       <div class="way-v"><video id="wayVideo" controls muted playsinline preload="none" poster="img/poster.jpg"><source src="https://speed.ist-design.co.kr/video/gooddream/jangi/apt.mp4" type="video/mp4"></video></div>
     </div>
     <div class="biz">
-      <span>굿드림치과의원 김포장기점</span><span>대표 : 이준목</span><span>사업자등록번호 : <mark style="background:#ffe08a;color:#000;padding:0 4px">확인 필요</mark></span><span>대표전화 : 031-984-7504</span><span>주소 : 경기 김포시 김포한강2로 106, 제1동 403호</span>
+      <span>굿드림치과의원 김포장기점</span><span>대표 : 이준목</span><span>대표전화 : 031-984-7504</span><span>주소 : 경기 김포시 김포한강2로 106, 제1동 403호</span>
     </div>
     <div class="biz-links"><a href="http://gooddream.co.kr/nopayment" target="_blank" rel="noopener">비급여 안내</a><a href="#">개인정보처리방침</a><a href="http://gooddream.co.kr" target="_blank" rel="noopener">굿드림치과 전 지점</a></div>
     <p class="biz-law">본 홈페이지는 의료법 제56조를 준수하여 제작되었습니다. 개인에 따라 치료 방법과 결과는 다를 수 있으며, 부작용이 나타날 수 있습니다. 진료 전 의료진과 충분히 상담하시기 바랍니다.<br>© Gooddream Dental Clinic. All rights reserved.</p>
@@ -868,7 +831,7 @@ header.hide{transform:translateY(-100%)}
   <a href="https://blog.naver.com/gooddreamden" target="_blank" rel="noopener"><span class="ico" style="background:var(--cream);color:var(--naver)">B</span>공식<br>블로그</a>
   <a class="tel" href="tel:031-984-7504"><span class="ico" style="background:var(--navy);color:#fff">☎</span>전화상담<b>031-984<br>7504</b></a>
 </div>
-<a href="#intro" id="go_top" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+<a href="#mainvisual" id="go_top" aria-label="맨 위로"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 <div class="mbar">
   <a href="tel:031-984-7504">전화 상담</a>
   <a href="https://pf.kakao.com/_byxibT" target="_blank" rel="noopener">카톡 상담</a>
@@ -958,7 +921,6 @@ header.hide{transform:translateY(-100%)}
 
 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 const POSTS=[{"t": "송정역치과, 재신경치료 성공률을 높이기 위해 확인해야 할 기준", "c": "치아살리기", "l": "https://blog.naver.com/gooddreamden/224390678464", "d": "26 Aug 2026", "f": "img/blog/b0.jpg", "s": "이미 신경치료를 마친 치아가 다시 욱신거리거나 씹을 때 불편해지면 “이번에도 치료가 가능할까?”, “결국 발치해야 하는 건 아닐까?”라는 걱정이 들 수 있습니다."}, {"t": "마곡치과추천, 아프지 않아도 정기검진이 필요한 이유와 고급 예방관리", "c": "굿드림소식", "l": "https://blog.naver.com/gooddreamden/224383309769", "d": "19 Aug 2026", "f": "img/blog/b1.jpg", "s": "치과는 통증이 생기면 방문하는 곳이라고 생각하는 분들이 많습니다. 하지만 실제로 충치나 잇몸질환은 초기에 별다른 불편감이 없는 경우가 적지 않습니다. 치아 사이에"}, {"t": "굿드림치과 6월 진료 일정 안내", "c": "굿드림소식", "l": "https://blog.naver.com/gooddreamden/224298856869", "d": "28 May 2026", "f": "img/blog/b2.jpg", "s": "안녕하세요. 굿드림치과입니다. 오는 6월 진료일정 미리 안내드립니다. 미리 확인하셔서 내원 일정에 차질 없으시길 바랍니다 :) 6월 3일 (수요일) 6월 3일은 "}, {"t": "장기동스케일링｜보험 스케일링 기준과 관리 방법", "c": "굿드림소식", "l": "https://blog.naver.com/gooddreamden/224107337608", "d": "12 Dec 2025", "f": "img/blog/b3.jpg", "s": "장기동스케일링｜보험 스케일링 기준과 관리 방법 안녕하세요. 굿드림치과입니다. 치과에 내원하셨을 때 가장 많이 받게 되는 처치 중 하나가 바로 스케일링입니다. 특히"}, {"t": "마곡교정치과 학생 돌출입 교정 시 중요한 요소", "c": "치아교정", "l": "https://blog.naver.com/gooddreamden/224106078826", "d": "11 Dec 2025", "f": "img/blog/b4.jpg", "s": "마곡교정치과 학생 돌출입 교정 시 중요한 요소 학생 시기의 돌출입은 겉모습뿐만 아니라 기능적인 면에서도 영향을 주는 경우가 많습니다. 입술이 자연스럽게 닫히지 않"}, {"t": "사우동치과 스케일링, 왜 지금 다시 중요해졌을까", "c": "일반진료", "l": "https://blog.naver.com/gooddreamden/224103626932", "d": "09 Dec 2025", "f": "img/blog/b5.jpg", "s": "사우동치과 스케일링, 왜 지금 다시 중요해졌을까 안녕하세요. 사우동치과, 굿드림치과입니다. 치아가 시리거나 잇몸이 붓는데도 치과 방문을 미루는 경우가 많습니다. "}, {"t": "[굿드림치과] 캄보디아 의료봉사, 따뜻한 손길 전하고 온 박동혁 원장", "c": "굿드림소식", "l": "https://blog.naver.com/gooddreamden/224102498957", "d": "08 Dec 2025", "f": "img/blog/b6.jpg", "s": "[굿드림치과] 캄보디아 의료봉사, 따뜻한 손길 전하고 온 박동혁 원장 안녕하세요. 굿드림치과입니다. 지난 추석 연휴 기간을 이용하여 캄보디아 지역 의료봉사 활동을"}, {"t": "발산역치과｜스케일링 부담을 줄이는 에어플로우 방식", "c": "일반진료", "l": "https://blog.naver.com/gooddreamden/224096931947", "d": "03 Dec 2025", "f": "img/blog/b7.jpg", "s": "발산역치과｜스케일링 부담을 줄이는 에어플로우 방식 정기적인 스케일링은 구강 건강을 유지하는 데 꼭 필요한 관리 과정입니다. 음식물 찌꺼기나 세균은 매일 축적되고,"}, {"t": "풍무동교정치과, 투명교정이 필요한 분들이 알아두면 좋은 핵심 정보", "c": "치아교정", "l": "https://blog.naver.com/gooddreamden/224088602503", "d": "28 Nov 2025", "f": "img/blog/b8.jpg", "s": "풍무동교정치과, 투명교정이 필요한 분들이 알아두면 좋은 핵심 정보 안녕하세요. 풍무동교정치과, 굿드림치과입니다. 요즘 치아교정을 고민하는 분들은 예전보다 심미적인"}, {"t": "마곡스케일링, 통증 때문에 고민이라면", "c": "일반진료", "l": "https://blog.naver.com/gooddreamden/224090164079", "d": "27 Nov 2025", "f": "img/blog/b9.jpg", "s": "마곡스케일링, 통증 때문에 고민이라면 안녕하세요. 굿드림치과입니다. 최근 다양한 건강 데이터에서 확인되는 공통점 중 하나는 성인의 상당수가 치은염이나 치주질환을 "}, {"t": "김포공항치과 에어플로우 스케일링, 어떤 점이 다를까", "c": "일반진료", "l": "https://blog.naver.com/gooddreamden/224088579997", "d": "26 Nov 2025", "f": "img/blog/b10.jpg", "s": "김포공항치과 에어플로우 스케일링, 어떤 점이 다를까 안녕하세요. 김포공항치과, 굿드림치과입니다. 스케일링은 익숙한 치료임에도 불구하고 막상 내원을 망설이는 분들이"}, {"t": "굿드림치과 문종일 원장, 이번엔 SBS ‘키스는 괜히해서!’ 출연!", "c": "굿드림소식", "l": "https://blog.naver.com/gooddreamden/224087740749", "d": "25 Nov 2025", "f": "img/blog/b11.jpg", "s": "안녕하세요. 굿드림치과입니다. 오늘은 진료 이야기가 아니라, 많은 분들이 궁금해하시는 소식 하나를 전해드리려고 합니다. 저희 치과 문종일 대표원장님이 최근 SBS"}, {"t": "장기동교정치과 교정과 전문의가 진행하는 투명교정", "c": "치아교정", "l": "https://blog.naver.com/gooddreamden/224086190554", "d": "24 Nov 2025", "f": "img/blog/b12.jpg", "s": "장기동교정치과 교정과 전문의가 진행하는 투명교정 치아교정을 시작하려는 분들이 공통적으로 고민하는 부분이 있습니다. 바로 “치료 결과가 얼마나 자연스럽고 안정적으로"}, {"t": "발산교정치과 빠른 교정이 필요할 때 꼭 확인해야 할 것", "c": "치아교정", "l": "https://blog.naver.com/gooddreamden/224080962169", "d": "19 Nov 2025", "f": "img/blog/b14.jpg", "s": "발산교정치과 빠른 교정이 필요할 때 꼭 확인해야 할 것 최근 상담을 진행하다 보면 일정 때문에 교정을 고민하시는 분들이 많습니다. 예를 들면 6개월 뒤 유학을 앞"}, {"t": "풍무동치과 어금니 재신경치료 과정과 성공률", "c": "치아살리기", "l": "https://blog.naver.com/gooddreamden/223992757087", "d": "02 Sep 2025", "f": "img/blog/b48.jpg", "s": "풍무동치과 어금니 재신경치료 과정과 성공률 안녕하세요. 풍무동치과, 굿드림치과입니다. 치과 진료를 받다 보면 “한 번 신경치료를 했는데 또 해야 한다”는 이야기를"}];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -967,8 +929,7 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 /* smooth scroll */
 let lenis=null;
-if(window.Lenis&&!reduce){lenis=new Lenis({duration:1.15});const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}
-const goTo=id=>{const el=document.querySelector(id);if(!el)return;lenis?lenis.scrollTo(el,{offset:id==='#intro'?0:-60}):el.scrollIntoView({behavior:'smooth'})};
+const goTo=id=>{const el=document.querySelector(id);if(!el)return;scrollTo({top:id==='#mainvisual'?0:el.getBoundingClientRect().top+scrollY-60,behavior:'smooth'})};
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){e.preventDefault();goTo(id);gnb.classList.remove('open');burger.classList.remove('x')}}));
 
 /* header: solid after intro, hide on scroll down */
@@ -987,8 +948,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 $$('.rv,.clip').forEach(el=>io.observe(el));
 $$('img').forEach(i=>i.decoding='async');
 
-/* intro crossfade */
-const introTimer=(()=>{const im=$$('#intro .bg img');let i=0;return setInterval(()=>{im[i].classList.remove('act');i=(i+1)%im.length;im[i].classList.add('act')},5000)})();
 
 /* main visual */
 const navBtns=$$('#mvNav button');
@@ -1020,6 +979,9 @@ const sys=new Swiper('.sys',{effect:'fade',fadeEffect:{crossFade:true},speed:100
   on:{slideChange(s){sysBtns.forEach((b,k)=>b.classList.toggle('act',k===s.realIndex))}}});
 sysBtns.forEach((b,k)=>b.onclick=()=>sys.slideToLoop(k));
 
+/* autoplay only while visible */
+[[mv,'#mainvisual'],[tour,'#main06'],[sys,'#main07']].forEach(([sw,sel])=>{sw.autoplay.stop();new IntersectionObserver(e=>e[0].isIntersecting?sw.autoplay.start():sw.autoplay.stop()).observe($(sel))});
+
 /* count up */
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.to,t0=performance.now(),dur=reduce?1:1600;
   const step=t=>{const p=Math.min(1,(t-t0)/dur);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.5});
@@ -1027,17 +989,6 @@ $$('.cnt').forEach(c=>cio.observe(c));
 
 /* credentials circles: mouse parallax */
 const circles=$$('#circles .cb');
-/* bubbles: gentle float + eased mouse parallax in one rAF loop (no CSS transition fighting) */
-if(!reduce&&matchMedia('(min-width:761px)').matches){
-  let tx=0,ty=0,cx=0,cy=0,run=false;const aw=$('#awards');
-  aw.addEventListener('mousemove',e=>{const r=aw.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5});
-  aw.addEventListener('mouseleave',()=>{tx=ty=0});
-  const ph=circles.map((c,k)=>({d:(k%3+1)*12,o:k*0.9,a:10+(k%4)*3}));
-  const tick=t=>{if(!run)return;cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;const s=t/1000;
-    circles.forEach((c,k)=>{const p=ph[k],fy=Math.sin(s*0.9+p.o)*p.a;c.style.transform=`translate3d(${(-cx*p.d).toFixed(2)}px,${(-cy*p.d+fy).toFixed(2)}px,0)`});
-    requestAnimationFrame(tick)};
-  new IntersectionObserver(es=>{run=es[0].isIntersecting;if(run)requestAnimationFrame(tick)}).observe(aw);
-}
 
 /* story tabs */
 const renderPosts=c=>{const list=(c==='전체'?POSTS:POSTS.filter(p=>p.c===c)).slice(0,8);
@@ -1057,8 +1008,7 @@ const today=new Date().toISOString().slice(0,10),pop=$('#LayerPopup');
 if(store.get('gd_pop')!==today)pop.hidden=false;
 $('#popClose').onclick=()=>{if($('#popToday').checked)store.set('gd_pop',today);pop.hidden=true};
 
-/* intro video: show once it can play */
-const vod=$('#intro .vod');if(vod){const ok=()=>{vod.classList.add('ready');clearInterval(introTimer)};if(vod.readyState>2)ok();vod.addEventListener('canplay',ok);if(reduce)vod.pause()}
+
 
 /* directions videos */
 $$('#wayTabs button').forEach(b=>b.onclick=()=>{$$('#wayTabs button').forEach(x=>x.classList.toggle('act',x===b));const v=$('#wayVideo');v.src='https://speed.ist-design.co.kr/video/gooddream/jangi/'+b.dataset.v+'.mp4';v.play().catch(()=>{})});
